@@ -1,0 +1,79 @@
+name: "DataSubjectRequest"
+domain: "Notices, preferences, rights, and complaints"
+domain_slug: "notices-preferences-rights-and-complaints"
+purpose: "Formal rights request workflow from an individual."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "processing_activity_id"
+    type: "string"
+    required: false
+    description: "Related activity if known."
+  - name: "request_type"
+    type: "enum"
+    required: true
+    description: "Type such as access, erasure, portability, or objection."
+  - name: "request_channel"
+    type: "string"
+    required: false
+    description: "How the request was received."
+  - name: "requester_reference"
+    type: "string"
+    required: true
+    description: "Reference to the requester."
+  - name: "received_at"
+    type: "datetime"
+    required: true
+    description: "Receipt timestamp."
+  - name: "due_at"
+    type: "datetime"
+    required: false
+    description: "Response deadline."
+  - name: "identity_verified_at"
+    type: "datetime"
+    required: false
+    description: "Verification timestamp."
+  - name: "assigned_party_id"
+    type: "string"
+    required: false
+    description: "Handler or owner."
+  - name: "resolution_summary"
+    type: "text"
+    required: false
+    description: "How the request was resolved."
+  - name: "closed_at"
+    type: "datetime"
+    required: false
+    description: "Closure timestamp."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Workflow status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "processing_activity"
+    target: "ProcessingActivity"
+    cardinality: "many-to-one"
+    description: "Related processing activity."
+  - name: "assigned_party"
+    target: "Party"
+    cardinality: "many-to-one"
+    description: "Assigned handler."
+  - name: "evidence"
+    target: "Evidence"
+    cardinality: "one-to-many"
+    description: "Verification, response, and fulfillment artifacts."
+notes:
+  - "Supports DSAR and similar request tracking with deadlines and proof."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

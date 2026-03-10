@@ -1,0 +1,56 @@
+name: "BreachNotification"
+domain: "Incidents and breach response"
+domain_slug: "incidents-and-breach-response"
+purpose: "Notification sent to a regulator, individual, or other recipient as part of incident response."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "incident_id"
+    type: "string"
+    required: true
+    description: "Parent incident."
+  - name: "recipient_party_id"
+    type: "string"
+    required: false
+    description: "Recipient party when tracked as a party."
+  - name: "recipient_scope"
+    type: "enum"
+    required: true
+    description: "Audience class such as regulator or affected_individual when no concrete recipient party is modeled."
+  - name: "notification_channel"
+    type: "string"
+    required: false
+    description: "How the notification was sent."
+  - name: "due_at"
+    type: "datetime"
+    required: false
+    description: "Deadline for notice."
+  - name: "sent_at"
+    type: "datetime"
+    required: false
+    description: "Send timestamp."
+  - name: "reference_number"
+    type: "string"
+    required: false
+    description: "Regulator or case reference."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Workflow status."
+relations:
+  - name: "incident"
+    target: "Incident"
+    cardinality: "many-to-one"
+    description: "Parent incident."
+  - name: "recipient"
+    target: "Party"
+    cardinality: "many-to-one"
+    description: "Recipient party when applicable."
+notes:
+  - "Supports separate tracking of notifications to multiple audiences."
+  - "`recipient_scope` is an enum-like classifier and complements `recipient_party_id`; it is not a relation target."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

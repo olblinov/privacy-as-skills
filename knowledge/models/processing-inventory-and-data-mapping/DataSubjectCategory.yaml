@@ -1,0 +1,43 @@
+name: "DataSubjectCategory"
+domain: "Processing inventory and data mapping"
+domain_slug: "processing-inventory-and-data-mapping"
+purpose: "Group of individuals whose data is processed, such as customers or employees."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "name"
+    type: "string"
+    required: true
+    description: "Category name."
+  - name: "description"
+    type: "text"
+    required: false
+    description: "Detailed description of the group."
+  - name: "vulnerability_level"
+    type: "string"
+    required: false
+    description: "Sensitivity or vulnerability marker such as child or employee."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Lifecycle status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "processing_activities"
+    target: "ProcessingActivity"
+    cardinality: "many-to-many"
+    description: "Activities affecting this subject group."
+notes:
+  - "Critical for notices, risk, fairness, and rights handling."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

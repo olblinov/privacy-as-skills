@@ -1,0 +1,59 @@
+name: "TrainingProgram"
+domain: "Training and awareness"
+domain_slug: "training-and-awareness"
+purpose: "Defines privacy training content by audience, format, and cadence."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "title"
+    type: "string"
+    required: true
+    description: "Training title."
+  - name: "audience"
+    type: "string"
+    required: true
+    description: "Target audience."
+  - name: "delivery_format"
+    type: "string"
+    required: false
+    description: "Delivery mode such as e-learning or workshop."
+  - name: "cadence"
+    type: "string"
+    required: false
+    description: "How often the training recurs."
+  - name: "owner_party_id"
+    type: "string"
+    required: false
+    description: "Program owner."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Lifecycle status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "owner"
+    target: "Party"
+    cardinality: "many-to-one"
+    description: "Program owner."
+  - name: "assignments"
+    target: "TrainingAssignment"
+    cardinality: "one-to-many"
+    description: "Required or completed assignments."
+  - name: "evidence"
+    target: "Evidence"
+    cardinality: "one-to-many"
+    description: "Attendance records, materials, and reports."
+notes:
+  - "Supports general, job-specific, and refresher training use cases."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

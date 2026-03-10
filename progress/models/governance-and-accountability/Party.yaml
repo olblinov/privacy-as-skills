@@ -1,0 +1,59 @@
+name: "Party"
+domain: "Governance and accountability"
+domain_slug: "governance-and-accountability"
+purpose: "Reusable actor model for internal owners, processors, vendors, regulators, auditors, and external stakeholders."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: false
+    description: "Owning organization when the party is internal."
+  - name: "name"
+    type: "string"
+    required: true
+    description: "Display name for person or entity."
+  - name: "party_type"
+    type: "enum"
+    required: true
+    description: "Type of party such as internal_user, vendor, regulator, or dpo."
+  - name: "jurisdiction"
+    type: "string"
+    required: false
+    description: "Jurisdiction where the party operates or is based."
+  - name: "contact_email"
+    type: "string"
+    required: false
+    description: "Primary contact address."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Lifecycle status."
+relations:
+  - name: "processing_roles"
+    target: "ProcessingPartyRole"
+    cardinality: "one-to-many"
+    description: "Roles held in processing activities."
+  - name: "third_party_engagements"
+    target: "ThirdPartyEngagement"
+    cardinality: "one-to-many"
+    description: "Vendor, partner, or processor engagements."
+  - name: "training_assignments"
+    target: "TrainingAssignment"
+    cardinality: "one-to-many"
+    description: "Training assignments for the party."
+  - name: "assigned_requests"
+    target: "DataSubjectRequest"
+    cardinality: "one-to-many"
+    description: "Rights requests assigned to the party."
+  - name: "assigned_incidents"
+    target: "Incident"
+    cardinality: "one-to-many"
+    description: "Incidents owned or handled by the party."
+notes:
+  - "This model reduces duplication across internal and external actors."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

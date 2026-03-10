@@ -1,0 +1,71 @@
+name: "LegalRequirement"
+domain: "Governance and accountability"
+domain_slug: "governance-and-accountability"
+purpose: "Law, regulation, code, or contractual obligation that drives privacy actions."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "jurisdiction"
+    type: "string"
+    required: true
+    description: "Applicable jurisdiction."
+  - name: "source_name"
+    type: "string"
+    required: true
+    description: "Source instrument or authority."
+  - name: "citation"
+    type: "string"
+    required: false
+    description: "Formal citation or article reference."
+  - name: "title"
+    type: "string"
+    required: true
+    description: "Short title of the requirement."
+  - name: "topic"
+    type: "string"
+    required: false
+    description: "Subject area such as notices or transfers."
+  - name: "obligation_text"
+    type: "text"
+    required: true
+    description: "Plain-language obligation statement."
+  - name: "effective_date"
+    type: "date"
+    required: false
+    description: "Date obligation becomes effective."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Tracking status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "policies"
+    target: "Policy"
+    cardinality: "many-to-many"
+    description: "Policies that implement the requirement."
+  - name: "controls"
+    target: "Control"
+    cardinality: "many-to-many"
+    description: "Controls that satisfy the requirement."
+  - name: "processing_activities"
+    target: "ProcessingActivity"
+    cardinality: "many-to-many"
+    description: "Activities impacted by the requirement."
+  - name: "notices"
+    target: "Notice"
+    cardinality: "many-to-many"
+    description: "Notices informed by the requirement."
+notes:
+  - "Use to connect framework controls back to concrete obligations."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

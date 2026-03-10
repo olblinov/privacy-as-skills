@@ -1,0 +1,71 @@
+name: "PreferenceRecord"
+domain: "Notices, preferences, rights, and complaints"
+domain_slug: "notices-preferences-rights-and-complaints"
+purpose: "Captured preference such as consent, opt-out, or other processing choice."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "processing_activity_id"
+    type: "string"
+    required: false
+    description: "Related activity."
+  - name: "legal_basis_id"
+    type: "string"
+    required: false
+    description: "Legal basis under which the preference matters."
+  - name: "notice_id"
+    type: "string"
+    required: false
+    description: "Notice presented at capture time."
+  - name: "preference_type"
+    type: "string"
+    required: true
+    description: "Type such as consent, withdrawal, opt_out, or objection."
+  - name: "subject_reference"
+    type: "string"
+    required: true
+    description: "Reference to the individual."
+  - name: "capture_channel"
+    type: "string"
+    required: false
+    description: "Where the preference was captured."
+  - name: "captured_at"
+    type: "datetime"
+    required: true
+    description: "Capture timestamp."
+  - name: "withdrawn_at"
+    type: "datetime"
+    required: false
+    description: "Withdrawal timestamp if applicable."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Current preference status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "processing_activity"
+    target: "ProcessingActivity"
+    cardinality: "many-to-one"
+    description: "Related processing activity."
+  - name: "legal_basis"
+    target: "LegalBasis"
+    cardinality: "many-to-one"
+    description: "Related legal basis."
+  - name: "notice"
+    target: "Notice"
+    cardinality: "many-to-one"
+    description: "Related notice."
+notes:
+  - "Useful for demonstrating valid authorization and withdrawal handling."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

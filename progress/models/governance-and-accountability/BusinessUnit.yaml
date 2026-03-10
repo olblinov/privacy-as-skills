@@ -1,0 +1,47 @@
+name: "BusinessUnit"
+domain: "Governance and accountability"
+domain_slug: "governance-and-accountability"
+purpose: "Organizational subdivision that owns systems, policies, and processing activities."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "name"
+    type: "string"
+    required: true
+    description: "Business unit name."
+  - name: "description"
+    type: "text"
+    required: false
+    description: "Short description of remit."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Lifecycle status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "systems"
+    target: "SystemAsset"
+    cardinality: "one-to-many"
+    description: "Systems operated by the business unit."
+  - name: "processing_activities"
+    target: "ProcessingActivity"
+    cardinality: "one-to-many"
+    description: "Processing activities owned by the business unit."
+  - name: "policies"
+    target: "Policy"
+    cardinality: "one-to-many"
+    description: "Unit-specific policies or procedures."
+notes:
+  - "Useful when privacy responsibilities differ across product lines or functions."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

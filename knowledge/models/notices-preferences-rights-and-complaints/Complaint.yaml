@@ -1,0 +1,79 @@
+name: "Complaint"
+domain: "Notices, preferences, rights, and complaints"
+domain_slug: "notices-preferences-rights-and-complaints"
+purpose: "Privacy concern or complaint submitted by an individual or external party."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "processing_activity_id"
+    type: "string"
+    required: false
+    description: "Related activity if known."
+  - name: "source_channel"
+    type: "string"
+    required: false
+    description: "How the complaint was received."
+  - name: "complainant_reference"
+    type: "string"
+    required: true
+    description: "Reference to the complainant."
+  - name: "received_at"
+    type: "datetime"
+    required: true
+    description: "Receipt timestamp."
+  - name: "assigned_party_id"
+    type: "string"
+    required: false
+    description: "Handler or owner."
+  - name: "related_request_id"
+    type: "string"
+    required: false
+    description: "Optional linked rights request."
+  - name: "root_cause"
+    type: "text"
+    required: false
+    description: "Root cause analysis."
+  - name: "outcome_summary"
+    type: "text"
+    required: false
+    description: "Resolution summary."
+  - name: "closed_at"
+    type: "datetime"
+    required: false
+    description: "Closure timestamp."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Workflow status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "processing_activity"
+    target: "ProcessingActivity"
+    cardinality: "many-to-one"
+    description: "Related activity."
+  - name: "assigned_party"
+    target: "Party"
+    cardinality: "many-to-one"
+    description: "Assigned handler."
+  - name: "related_request"
+    target: "DataSubjectRequest"
+    cardinality: "many-to-one"
+    description: "Optional linked rights request."
+  - name: "evidence"
+    target: "Evidence"
+    cardinality: "one-to-many"
+    description: "Investigation notes and response records."
+notes:
+  - "Supports complaint metrics, root-cause analysis, and remedial action."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

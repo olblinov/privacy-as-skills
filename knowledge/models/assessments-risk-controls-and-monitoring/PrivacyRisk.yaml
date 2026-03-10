@@ -1,0 +1,91 @@
+name: "PrivacyRisk"
+domain: "Assessments, risk, controls, and monitoring"
+domain_slug: "assessments-risk-controls-and-monitoring"
+purpose: "Privacy harm, compliance issue, or operational risk requiring treatment."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "processing_activity_id"
+    type: "string"
+    required: false
+    description: "Related processing activity."
+  - name: "assessment_id"
+    type: "string"
+    required: false
+    description: "Assessment that identified the risk."
+  - name: "title"
+    type: "string"
+    required: true
+    description: "Risk title."
+  - name: "problem_statement"
+    type: "text"
+    required: true
+    description: "Statement of the risk or problematic data action."
+  - name: "likelihood"
+    type: "string"
+    required: false
+    description: "Likelihood rating."
+  - name: "impact"
+    type: "string"
+    required: false
+    description: "Impact rating."
+  - name: "priority"
+    type: "string"
+    required: true
+    description: "Priority or overall rating."
+  - name: "treatment_strategy"
+    type: "string"
+    required: false
+    description: "Accept, mitigate, transfer, or avoid."
+  - name: "owner_party_id"
+    type: "string"
+    required: false
+    description: "Risk owner."
+  - name: "target_resolution_date"
+    type: "date"
+    required: false
+    description: "Target closure date."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Workflow status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "processing_activity"
+    target: "ProcessingActivity"
+    cardinality: "many-to-one"
+    description: "Related activity."
+  - name: "assessment"
+    target: "Assessment"
+    cardinality: "many-to-one"
+    description: "Originating assessment."
+  - name: "owner"
+    target: "Party"
+    cardinality: "many-to-one"
+    description: "Risk owner."
+  - name: "controls"
+    target: "Control"
+    cardinality: "many-to-many"
+    description: "Controls treating the risk."
+  - name: "mitigation_actions"
+    target: "MitigationAction"
+    cardinality: "one-to-many"
+    description: "Actions created to reduce the risk."
+  - name: "evidence"
+    target: "Evidence"
+    cardinality: "one-to-many"
+    description: "Risk analyses and closure proof."
+notes:
+  - "Can represent both harm-based privacy risk and compliance-oriented risk."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

@@ -1,0 +1,79 @@
+name: "Policy"
+domain: "Governance and accountability"
+domain_slug: "governance-and-accountability"
+purpose: "Internal privacy policy or procedure used to operationalize obligations."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: true
+    description: "Parent organization."
+  - name: "business_unit_id"
+    type: "string"
+    required: false
+    description: "Owning business unit when scoped locally."
+  - name: "privacy_program_id"
+    type: "string"
+    required: false
+    description: "Governing privacy program."
+  - name: "title"
+    type: "string"
+    required: true
+    description: "Policy title."
+  - name: "policy_type"
+    type: "enum"
+    required: true
+    description: "Policy category."
+  - name: "scope"
+    type: "text"
+    required: false
+    description: "Scope and applicability."
+  - name: "version"
+    type: "string"
+    required: false
+    description: "Version label."
+  - name: "effective_date"
+    type: "date"
+    required: false
+    description: "Date policy takes effect."
+  - name: "review_date"
+    type: "date"
+    required: false
+    description: "Next planned review date."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Lifecycle status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Parent organization."
+  - name: "business_unit"
+    target: "BusinessUnit"
+    cardinality: "many-to-one"
+    description: "Optional local owner."
+  - name: "privacy_program"
+    target: "PrivacyProgram"
+    cardinality: "many-to-one"
+    description: "Governing privacy program."
+  - name: "legal_requirements"
+    target: "LegalRequirement"
+    cardinality: "many-to-many"
+    description: "Obligations mapped to the policy."
+  - name: "controls"
+    target: "Control"
+    cardinality: "many-to-many"
+    description: "Controls defined or supported by the policy."
+  - name: "evidence"
+    target: "Evidence"
+    cardinality: "one-to-many"
+    description: "Artifacts proving review, approval, and operation."
+notes:
+  - "Supports policy review, versioning, and accountability workflows."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."
