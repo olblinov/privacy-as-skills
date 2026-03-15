@@ -1,0 +1,11 @@
+id,organization_id,data_category_id,retention_rule_id,name,description,format,is_direct_identifier,source_system,status
+de-customer-id,org-acme-inc,dc-identity,rr-order-records,Customer ID,"Unique internal customer identifier.",string,true,Storefront,active
+de-full-name,org-acme-inc,dc-identity,rr-order-records,Full name,"Customer first and last name.",string,true,Storefront,active
+de-email-address,org-acme-inc,dc-contact,rr-marketing-profiles,Email address,"Primary contact email used for order updates and marketing where permitted.",email,true,Storefront,active
+de-phone-number,org-acme-inc,dc-contact,rr-support-cases,Phone number,"Phone number provided for delivery or support follow-up.",string,true,Storefront,active
+de-delivery-address,org-acme-inc,dc-contact,rr-order-records,Delivery address,"Shipping address for order fulfilment.",string,true,Storefront,active
+de-order-history,org-acme-inc,dc-transaction,rr-order-records,Order history,"Order items, order value, timestamps, and fulfilment state.",json,false,Order Hub,active
+de-support-ticket-text,org-acme-inc,dc-support,rr-support-cases,Support ticket text,"Free-text issue description and follow-up messages.",text,false,Support Portal,active
+de-return-attachment,org-acme-inc,dc-support,rr-support-cases,Return attachment,"Photos or documents attached to a support case.",binary,false,Support Portal,active
+de-consent-status,org-acme-inc,dc-preference,rr-marketing-profiles,Consent status,"Current email marketing opt-in or opt-out state.",boolean,false,Preference Center,active
+de-campaign-engagement,org-acme-inc,dc-preference,rr-marketing-profiles,Campaign engagement,"Opens, clicks, and last engagement timestamp used for suppression and retention.",json,false,MarketReach Cloud,active

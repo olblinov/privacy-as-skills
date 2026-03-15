@@ -1,0 +1,6 @@
+id,organization_id,name,classification,is_sensitive,description,status
+dc-identity,org-acme-inc,Identity data,confidential,false,"Data that directly identifies an individual, such as name or customer ID.",active
+dc-contact,org-acme-inc,Contact data,confidential,false,"Data used to contact or locate an individual.",active
+dc-transaction,org-acme-inc,Transaction data,confidential,false,"Purchase and payment-adjacent order data excluding full payment card data.",active
+dc-support,org-acme-inc,Support interaction data,confidential,false,"Case notes, ticket attachments, and communication history.",active
+dc-preference,org-acme-inc,Marketing preference data,confidential,false,"Consent signals, unsubscribe state, and campaign preferences.",active

@@ -1,0 +1,64 @@
+name: "PrivacyRiskTaxonomy"
+domain: "Assessments, risk, controls, and monitoring"
+domain_slug: "assessments-risk-controls-and-monitoring"
+purpose: "Reference taxonomy for problematic data actions and privacy problems used to classify privacy risks."
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Unique identifier."
+  - name: "organization_id"
+    type: "string"
+    required: false
+    description: "Optional owning organization when the taxonomy is scoped locally."
+  - name: "taxonomy_type"
+    type: "enum"
+    required: true
+    description: "Type such as problematic_data_action or problem."
+  - name: "parent_taxonomy_id"
+    type: "string"
+    required: false
+    description: "Optional parent item when the taxonomy is hierarchical."
+  - name: "source_name"
+    type: "string"
+    required: true
+    description: "Source framework or authority."
+  - name: "source_reference"
+    type: "string"
+    required: false
+    description: "Reference to the source section, appendix, or document."
+  - name: "name"
+    type: "string"
+    required: true
+    description: "Taxonomy item name."
+  - name: "description"
+    type: "text"
+    required: true
+    description: "Meaning of the taxonomy item."
+  - name: "status"
+    type: "enum"
+    required: true
+    description: "Lifecycle status."
+relations:
+  - name: "organization"
+    target: "Organization"
+    cardinality: "many-to-one"
+    description: "Optional owning organization."
+  - name: "parent_taxonomy_item"
+    target: "PrivacyRiskTaxonomy"
+    cardinality: "many-to-one"
+    description: "Optional parent taxonomy item."
+  - name: "child_taxonomy_items"
+    target: "PrivacyRiskTaxonomy"
+    cardinality: "one-to-many"
+    description: "Nested taxonomy items."
+  - name: "privacy_risks"
+    target: "PrivacyRisk"
+    cardinality: "many-to-many"
+    description: "Risks classified by this taxonomy item."
+notes:
+  - "Can represent both problematic data actions and downstream privacy problems."
+  - "Useful for NIST-style risk statements that separate the data action from the harm."
+source_context:
+  - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
+  - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

@@ -27,6 +27,10 @@ fields:
     type: "text"
     required: true
     description: "Statement of the risk or problematic data action."
+  - name: "taxonomy_item_ids"
+    type: "string"
+    required: false
+    description: "Semicolon-delimited PrivacyRiskTaxonomy identifiers used to classify the problematic data action and resulting problems in flat-file storage."
   - name: "likelihood"
     type: "string"
     required: false
@@ -72,6 +76,10 @@ relations:
     target: "Party"
     cardinality: "many-to-one"
     description: "Risk owner."
+  - name: "taxonomy_items"
+    target: "PrivacyRiskTaxonomy"
+    cardinality: "many-to-many"
+    description: "Problematic data actions and privacy problems used to classify the risk."
   - name: "controls"
     target: "Control"
     cardinality: "many-to-many"
@@ -86,6 +94,7 @@ relations:
     description: "Risk analyses and closure proof."
 notes:
   - "Can represent both harm-based privacy risk and compliance-oriented risk."
+  - "Flat-file implementations can serialize taxonomy links in taxonomy_item_ids when a join table is not present."
 source_context:
   - "Derived from NIST Privacy Framework concepts such as inventory, governance, risk, control, communication, and protection."
   - "Derived from Nymity management activities such as governance, notices, rights handling, assessments, vendor oversight, and breach response."

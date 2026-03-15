@@ -1,0 +1,5 @@
+id,processing_activity_id,source_system_id,target_system_id,from_party_id,to_party_id,origin_jurisdiction,destination_jurisdiction,transfer_frequency,disclosure_type,includes_personal_data,transfer_mechanism_id,status
+df-order-storefront-to-orderhub,pa-order-fulfilment,sys-storefront-platform,sys-order-hub,pty-acme-inc,pty-acme-inc,Netherlands,Germany,continuous,internal,true,,active
+df-support-portal-to-helpdeskhq,pa-customer-support,sys-support-portal,sys-helpdeskhq-saas,pty-acme-inc,pty-helpdeskhq-ltd,Netherlands,Ireland,continuous,vendor,true,,active
+df-marketing-storefront-to-marketreach,pa-email-marketing,sys-storefront-platform,sys-marketreach-cloud,pty-acme-inc,pty-marketreach-cloud-inc,Netherlands,United States,daily,vendor,true,tm-eu-us-scc-marketreach,active
+df-marketreach-reporting-to-storefront,pa-email-marketing,sys-marketreach-cloud,sys-storefront-platform,pty-marketreach-cloud-inc,pty-acme-inc,United States,Netherlands,daily,vendor,true,tm-eu-us-scc-marketreach,active

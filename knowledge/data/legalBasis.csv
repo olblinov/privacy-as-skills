@@ -1,0 +1,4 @@
+id,organization_id,basis_type,jurisdiction,description,source_reference,requires_consent,status
+lb-contract-eu,org-acme-inc,contract,EU GDPR,"Necessary to perform the ecommerce contract with the customer.","GDPR Article 6(1)(b)",false,active
+lb-consent-eu,org-acme-inc,consent,EU GDPR,"Used for direct marketing email campaigns where the individual has opted in.","GDPR Article 6(1)(a)",true,active
+lb-legitimate-interest-eu,org-acme-inc,legitimate_interest,EU GDPR,"Used for limited service improvement and case management analytics subject to balancing.","GDPR Article 6(1)(f)",false,active
