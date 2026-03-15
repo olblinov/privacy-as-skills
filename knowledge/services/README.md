@@ -139,9 +139,12 @@ These are the entry-point services that business, product, engineering, HR, proc
   - No external party or disclosure is involved.
   - The main issue is a live third-party incident rather than pre-existing due diligence or review.
 - Inputs:
-  - `[placeholder: counterparty details, services provided, data shared, jurisdictions, contract status]`
+  - Counterparty identity, role, and business purpose for the arrangement.
+  - Description of the services provided or the data-sharing use case.
+  - Files and/or links to documentation.
 - Outputs:
-  - `[placeholder: review outcome, required controls, transfer position, due diligence actions, evidence trail]`
+  - Review outcome.
+  - Required contract terms, controls, or remediation conditions.
 - Relevant models:
   - `ThirdPartyEngagement`
   - `Party`
@@ -150,6 +153,10 @@ These are the entry-point services that business, product, engineering, HR, proc
   - `Assessment`
   - `Evidence`
   - `ProcessingActivity`
+  - `Control`
+  - `PrivacyRisk`
+  - `LegalRequirement`
+  - `OrganizationRequirement`
 
 ### Handle a privacy request or complaint
 
@@ -504,22 +511,3 @@ These services maintain the reusable content, regulatory memory, and shared patt
   - `TrainingAssignment`
   - `Party`
   - `Evidence`
-
-## Relations
-
-The list below mirrors the links in the Mermaid graph in `progress/services-relationships.md`.
-
-- `Get privacy advice and triage` -> `Privacy By Design`
-- `Get privacy advice and triage` -> `Knowledge` group
-- `Request a privacy impact review` -> `Privacy By Design`
-- `Review a vendor, partner, or data-sharing arrangement` -> `Privacy By Design`
-- `Handle a privacy request or complaint` -> `React to data subject requests`
-- `Report a privacy incident or suspected breach` -> `Maintain incident readiness, notification playbooks, and lessons learned`
-- `Privacy By Design` -> `Create or update a privacy notice, consent, or UX`
-- `Privacy By Design` -> `Create or update quality, minimization, retention, deletion, and disclosure controls`
-- `Privacy By Design` -> `Maintain RoPA, records, data maps, transfer mechanisms, and evidence`
-- `Privacy By Design` -> `Run monitoring, control testing, audits, and reporting`
-- `React to data subject requests` -> `Maintain RoPA, records, data maps, transfer mechanisms, and evidence`
-- `Track regulatory changes and implementation decisions` -> `Maintain privacy policies, standards, and approved control patterns`
-- `Maintain privacy policies, standards, and approved control patterns` -> `Privacy By Design`
-- `Request privacy training or awareness support` -> `Knowledge` group

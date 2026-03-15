@@ -96,5 +96,11 @@ Steps:
 7. Propose
    1. Mitigations. For each legal, organizational and privacy risks, propose mitigation actions. Categorize the mitigations into (1) contractual (amendments to contract); and (2) internal (efforts which we should implement internally as they cannot be closed by contractual controls)
    2. Residual risk action. Regarding acceptable risks, list those risks.
-8. Create a new ThirdPartyEngagement in relevant data source.
-9. Return the required outputs to the user.
+8. Create in relevant data source a new / updated entry for 
+   1. ThirdPartyEngagement
+   2. ProcessingActivity
+   3. Assessment
+   4. DataFlow
+   5. Party
+   6. TransferMechanism
+9.  Return the required outputs to the user.
