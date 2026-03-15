@@ -26,7 +26,7 @@ fields:
   - name: "engagement_role"
     type: "string"
     required: true
-    description: "Role such as processor, subprocessor, or partner."
+    description: "Role such as controller, processor, subprocessor."
   - name: "contract_reference"
     type: "string"
     required: false
