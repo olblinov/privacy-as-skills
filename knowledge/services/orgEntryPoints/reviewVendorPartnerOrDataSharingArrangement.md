@@ -90,7 +90,7 @@ Steps:
    3. Assess if the contract is sufficiently detailed to describe the types of data processed as well as data subject categories
 5. Check for organizational requirements. Find relevant items in organizationRequirements.csv.
 6. Perform a privacy risk assessment
-   1. Identify privacy risks based on taxonomy in privacyRisks.csv
+   1. Identify privacy risks based on taxonomy in privacyRiskTaxonomy.csv and record the selected taxonomy items on the privacy risk entry
    2. Assess the likelihood and impact on a 1-5 scale, calculate total risk score
    3. In case the risk score is 15 or above, propose mitigation efforts to resolve such risks.
 7. Propose

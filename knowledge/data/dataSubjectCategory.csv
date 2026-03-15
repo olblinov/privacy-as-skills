@@ -1,0 +1,4 @@
+id,organization_id,name,description,vulnerability_level,status
+dsc-customers,org-acme-inc,Customers,"Individuals who purchase goods from Acme EU storefronts.",normal,active
+dsc-prospects,org-acme-inc,Prospective customers,"Individuals who subscribe or otherwise show interest in Acme marketing before purchasing.",normal,active
+dsc-support-requesters,org-acme-inc,Support requesters,"Customers or household members who contact customer care about orders, returns, or warranty issues.",normal,active

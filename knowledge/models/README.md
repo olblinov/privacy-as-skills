@@ -17,7 +17,7 @@
 | Processing inventory and data mapping | `SystemAsset`, `ProcessingPurpose`, `LegalBasis`, `RetentionRule`, `DataSubjectCategory`, `DataCategory`, `DataElement`, `ProcessingActivity`, `ProcessingPartyRole`, `DataFlow`, `TransferMechanism` | `processing-inventory-and-data-mapping/` |
 | Third-party management | `ThirdPartyEngagement` | `third-party-management/` |
 | Notices, preferences, rights, and complaints | `Notice`, `PreferenceRecord`, `DataSubjectRequest`, `Complaint` | `notices-preferences-rights-and-complaints/` |
-| Assessments, risk, controls, and monitoring | `Assessment`, `AssessmentFinding`, `PrivacyRisk`, `MitigationAction`, `Control`, `Evidence`, `Metric` | `assessments-risk-controls-and-monitoring/` |
+| Assessments, risk, controls, and monitoring | `Assessment`, `AssessmentFinding`, `PrivacyRisk`, `PrivacyRiskTaxonomy`, `MitigationAction`, `Control`, `Evidence`, `Metric` | `assessments-risk-controls-and-monitoring/` |
 | Incidents and breach response | `Incident`, `BreachNotification` | `incidents-and-breach-response/` |
 
 ## Governance and accountability
@@ -76,7 +76,8 @@
 | --- | --- | --- | --- |
 | `Assessment` | PIA, DPIA, vendor review, audit, or similar evaluation | `processing_activity`, `system_asset`, `third_party_engagement`, `lead_assessor`, `findings[]`, `risks[]`, `evidence[]` | `assessments-risk-controls-and-monitoring/Assessment.yaml` |
 | `AssessmentFinding` | Specific issue found in an assessment | `assessment`, `owner`, `mitigation_actions[]`, `evidence[]` | `assessments-risk-controls-and-monitoring/AssessmentFinding.yaml` |
-| `PrivacyRisk` | Privacy harm or compliance risk to be treated | `processing_activity`, `assessment`, `owner`, `controls[]`, `mitigation_actions[]`, `evidence[]` | `assessments-risk-controls-and-monitoring/PrivacyRisk.yaml` |
+| `PrivacyRisk` | Privacy harm or compliance risk to be treated | `processing_activity`, `assessment`, `owner`, `taxonomy_items[]`, `controls[]`, `mitigation_actions[]`, `evidence[]` | `assessments-risk-controls-and-monitoring/PrivacyRisk.yaml` |
+| `PrivacyRiskTaxonomy` | Taxonomy of problematic data actions and privacy problems | `parent_taxonomy_item?`, `child_taxonomy_items[]`, `privacy_risks[]` | `assessments-risk-controls-and-monitoring/PrivacyRiskTaxonomy.yaml` |
 | `MitigationAction` | Action item created from risk or finding | `privacy_risk`, `assessment_finding`, `control`, `owner` | `assessments-risk-controls-and-monitoring/MitigationAction.yaml` |
 | `Control` | Privacy or privacy-relevant safeguard | `privacy_program`, `control_owner`, `policies[]`, `legal_requirements[]`, `processing_activities[]`, `systems[]`, `risks[]`, `evidence[]` | `assessments-risk-controls-and-monitoring/Control.yaml` |
 | `Evidence` | Artifact proving design, operation, review, or response | `policy?`, `training_program?`, `notice?`, `assessment?`, `assessment_finding?`, `privacy_risk?`, `control?`, `request?`, `complaint?`, `regulatory_change?` | `assessments-risk-controls-and-monitoring/Evidence.yaml` |

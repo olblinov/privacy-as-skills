@@ -1,0 +1,4 @@
+id,organization_id,name,description,business_goal,status
+pp-order-fulfilment,org-acme-inc,Order fulfilment,"Receive, validate, and fulfil online customer orders across EU storefronts.","Sell and deliver physical goods to customers.",active
+pp-customer-support,org-acme-inc,Customer support case management,"Handle post-sale questions, returns, and support tickets submitted by customers.","Resolve customer issues and maintain service quality.",active
+pp-email-marketing,org-acme-inc,Email marketing campaigns,"Send promotional email campaigns and measure engagement for opted-in individuals.","Drive repeat purchases and customer engagement.",active

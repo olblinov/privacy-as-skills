@@ -1,0 +1,6 @@
+id,organization_id,business_unit_id,name,asset_type,environment,hosting_model,geographic_scope,criticality,status
+sys-storefront-platform,org-acme-inc,bu-ecom-ops,Acme Storefront Platform,product,production,cloud,EU,high,active
+sys-order-hub,org-acme-inc,bu-ecom-ops,Order Hub,service,production,cloud,Germany,high,active
+sys-support-portal,org-acme-inc,bu-customer-care,Customer Support Portal,service,production,cloud,EU,medium,active
+sys-helpdeskhq-saas,org-acme-inc,bu-customer-care,HelpDeskHQ SaaS,service,production,cloud,Ireland,medium,active
+sys-marketreach-cloud,org-acme-inc,bu-growth-marketing,MarketReach Cloud,service,production,cloud,United States,high,active

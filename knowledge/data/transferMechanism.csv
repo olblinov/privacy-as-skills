@@ -1,0 +1,2 @@
+id,organization_id,mechanism_type,name,jurisdiction_scope,reference_document,approval_required,valid_from,valid_until,status
+tm-eu-us-scc-marketreach,org-acme-inc,SCC,EU Commission SCCs for MarketReach,EEA to United States,"Executed 2021 EU SCC Module 2 plus Acme transfer impact assessment",true,2025-02-15,2026-02-14,active

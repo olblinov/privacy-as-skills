@@ -1,0 +1,9 @@
+id,processing_activity_id,party_id,role_type,is_primary,notes
+ppr-order-controller,pa-order-fulfilment,pty-acme-inc,controller,true,"Acme determines purposes and essential means for order fulfilment."
+ppr-order-owner,pa-order-fulfilment,pty-anneke-janssen,owner,false,"Business owner for storefront and order operations."
+ppr-support-controller,pa-customer-support,pty-acme-inc,controller,true,"Acme remains controller for support case handling."
+ppr-support-owner,pa-customer-support,pty-sofia-dupont,owner,false,"Operational owner for customer care workflows."
+ppr-support-processor,pa-customer-support,pty-helpdeskhq-ltd,processor,false,"Vendor hosts and processes support tickets on Acme instructions."
+ppr-marketing-controller,pa-email-marketing,pty-acme-inc,controller,true,"Acme determines the purpose of promotional outreach to opted-in individuals."
+ppr-marketing-owner,pa-email-marketing,pty-elin-berg,owner,false,"Operational owner for growth marketing campaigns."
+ppr-marketing-processor,pa-email-marketing,pty-marketreach-cloud-inc,processor,false,"Vendor sends campaigns and stores engagement data as processor under Acme instructions."

@@ -1,0 +1,2 @@
+id,name,primary_jurisdiction,risk_tolerance_statement,privacy_mission,status
+org-acme-inc,Acme Inc.,Netherlands,"Acme accepts only low to moderate residual privacy risk and requires documented safeguards before personal data is disclosed to third parties.","Operate trusted ecommerce services across the EU with accountable and privacy-by-design data handling.",active

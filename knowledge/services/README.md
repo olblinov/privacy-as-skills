@@ -155,6 +155,7 @@ These are the entry-point services that business, product, engineering, HR, proc
   - `ProcessingActivity`
   - `Control`
   - `PrivacyRisk`
+  - `PrivacyRiskTaxonomy`
   - `LegalRequirement`
   - `OrganizationRequirement`
 
