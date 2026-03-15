@@ -2,3 +2,4 @@ id,organization_id,name,trigger_event,retention_period,disposal_method,legal_hol
 rr-order-records,org-acme-inc,Order and tax records,"Order completion or fiscal year close, whichever is later",7 years,"Secure deletion after retention period unless legal hold applies.",true,active
 rr-support-cases,org-acme-inc,Support case history,Case closure,3 years,"Secure deletion from production and backups per backup schedule.",true,active
 rr-marketing-profiles,org-acme-inc,Marketing contact profile,"Last meaningful engagement or consent withdrawal",24 months,"Delete or suppress inactive profiles and keep proof of unsubscribe only.",true,active
+rr-b2b-meeting-recordings,org-acme-inc,B2B partner meeting recordings and transcripts,"Meeting completion or earlier deletion request",30 days,"Delete recordings and transcripts after note extraction unless a shorter retention period or objection applies.",true,active

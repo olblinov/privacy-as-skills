@@ -3,3 +3,4 @@ df-order-storefront-to-orderhub,pa-order-fulfilment,sys-storefront-platform,sys-
 df-support-portal-to-helpdeskhq,pa-customer-support,sys-support-portal,sys-helpdeskhq-saas,pty-acme-inc,pty-helpdeskhq-ltd,Netherlands,Ireland,continuous,vendor,true,,active
 df-marketing-storefront-to-marketreach,pa-email-marketing,sys-storefront-platform,sys-marketreach-cloud,pty-acme-inc,pty-marketreach-cloud-inc,Netherlands,United States,daily,vendor,true,tm-eu-us-scc-marketreach,active
 df-marketreach-reporting-to-storefront,pa-email-marketing,sys-marketreach-cloud,sys-storefront-platform,pty-marketreach-cloud-inc,pty-acme-inc,United States,Netherlands,daily,vendor,true,tm-eu-us-scc-marketreach,active
+df-partner-meeting-platform-to-tldv,pa-b2b-partner-meeting-transcription,sys-remote-meeting-platform,sys-tldv-saas,pty-acme-inc,pty-tldx-solutions-gmbh,Netherlands,EEA,per_meeting,vendor,true,,planned

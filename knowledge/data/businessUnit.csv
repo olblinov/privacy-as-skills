@@ -2,3 +2,4 @@ id,organization_id,name,description,status
 bu-ecom-ops,org-acme-inc,Ecommerce Operations,"Owns the EU storefront, checkout, order orchestration, and fulfilment operations.",active
 bu-customer-care,org-acme-inc,Customer Care,"Runs post-sale support, returns, refunds, and case management operations.",active
 bu-growth-marketing,org-acme-inc,Growth Marketing,"Runs email marketing, audience management, and campaign analytics for opted-in individuals.",active
+bu-partnerships,org-acme-inc,Partnerships,"Runs business development and partnership discussions with prospective B2B counterparties.",active

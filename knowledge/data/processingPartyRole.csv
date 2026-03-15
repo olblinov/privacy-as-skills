@@ -7,3 +7,6 @@ ppr-support-processor,pa-customer-support,pty-helpdeskhq-ltd,processor,false,"Ve
 ppr-marketing-controller,pa-email-marketing,pty-acme-inc,controller,true,"Acme determines the purpose of promotional outreach to opted-in individuals."
 ppr-marketing-owner,pa-email-marketing,pty-elin-berg,owner,false,"Operational owner for growth marketing campaigns."
 ppr-marketing-processor,pa-email-marketing,pty-marketreach-cloud-inc,processor,false,"Vendor sends campaigns and stores engagement data as processor under Acme instructions."
+ppr-partner-meetings-controller,pa-b2b-partner-meeting-transcription,pty-acme-inc,controller,true,"Acme decides whether partner meetings are recorded, the business purpose, retention period, and follow-up use of transcripts."
+ppr-partner-meetings-owner,pa-b2b-partner-meeting-transcription,pty-tomas-dekker,owner,false,"Business owner for partnership meeting documentation workflows."
+ppr-partner-meetings-processor,pa-b2b-partner-meeting-transcription,pty-tldx-solutions-gmbh,processor,false,"tl;dv processes meeting recordings and transcripts on Acme instructions under the DPA."
